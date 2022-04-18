@@ -33,7 +33,8 @@
 
 Для реализации основного меню можно использовать пример ниже или написать свой
 """
-
+money = 0
+list_purchase = []
 while True:
     print('1. пополнение счета')
     print('2. покупка')
@@ -42,11 +43,32 @@ while True:
 
     choice = input('Выберите пункт меню')
     if choice == '1':
-        pass
+        while True:
+            count = input('Введите сумму на которую хотите пополнить счет: ')
+            if count.isdigit():
+                money += int(count)
+                break
+            else:
+                print('Вы ввели не число')
     elif choice == '2':
-        pass
+        while True:
+            purchase_amount = input('Введите сумму покупки: ')
+            if purchase_amount.isdigit():
+                if int(purchase_amount) > money:
+                    print('Недостаточно денег')
+                else:
+                    purchase = input('Введите название покупки: ')
+                    list_purchase.append([purchase, purchase_amount])
+                    money -= int(purchase_amount)
+                break
+            else:
+                print('Вы ввели не число')
     elif choice == '3':
-        pass
+        if len(list_purchase) != 0:
+            for purchase, purchase_amount in list_purchase:
+                print(purchase, purchase_amount)
+        else:
+            print('Вы пока не совершали покупок')
     elif choice == '4':
         break
     else:
