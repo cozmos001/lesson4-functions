@@ -20,16 +20,17 @@ def born_day():
         day = input('В какой день июня родился Пушкин?')
     print('Верно')
 
-def born_day_forewer():
+def born_day_remember():
     born_year()
     born_day()
 
-born_day_forewer()
-'''
-'''
+born_day_remember()
+
+
 Вариант с оберткой в функцию всего кода
-'''
-def born_day_forewer():
+
+
+def born_day_remember():
     year = input('Ввведите год рождения А.С.Пушкина:')
     while year != '1799':
         print("Не верно")
@@ -41,4 +42,25 @@ def born_day_forewer():
         day = input('В какой день июня родился Пушкин?')
     print('Верно')
 
-born_day_forewer()
+
+born_day_remember()
+'''
+
+
+# Универсальный вариант
+def remember(question='', right_answer=''):
+    '''
+    Функция напоминания/запоминания
+    :param question: Вопрос
+    :param right_answer: Правильный ответ
+    :return: None
+    '''
+    answer = input(question)
+    while answer != right_answer:
+        print('Не верно')
+        answer = input(question)
+    print('Верно')
+
+
+remember('Ввведите год рождения А.С.Пушкина: ', '1799')
+remember('Ввведите день рождения Пушкина: ', '6')

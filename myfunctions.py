@@ -14,6 +14,7 @@ def simple_separator():
     """
     return '**********'
 
+
 print(simple_separator() == '**********')  # True
 
 
@@ -39,6 +40,7 @@ def separator(simbol, count):
     """
     return simbol * count
 
+
 print(separator('-', 10) == '----------')  # True
 print(separator('#', 5) == '#####')  # True
 
@@ -59,9 +61,12 @@ def hello_world():
     print(separator('', 1))
     print(separator('#', 10))
 
+
 '''
 Еще вариант с меньшим кол-вом строк
 '''
+
+
 def hello_world_2():
     """
     Функция печатает Hello World в формате:
@@ -75,6 +80,7 @@ def hello_world_2():
     print(simple_separator(), '\n')
     print('Hello World!', '\n')
     print(separator('#', 10))
+
 
 '''
 **********
@@ -101,7 +107,6 @@ def hello_who(who='World'):
     print(simple_separator(), '\n')
     print(f'Hello {who}!', '\n')
     print(separator('#', 10))
-    pass
 
 
 '''
@@ -142,12 +147,12 @@ def pow_many(power, *args):
     summ = 0
     for i in args:
         summ += i
-    return summ**power
+    return summ ** power
     '''
     '''
     Вариант с использованием функции sum()
     '''
-    return sum(args)**power
+    return sum(args) ** power
 
 
 print(pow_many(1, 1, 2) == 3)  # True -> (1 + 2)**1 == 3
@@ -159,7 +164,7 @@ print(pow_many(2, 1, 2, 3, 4) == 100)  # True -> (1 + 2 + 3 + 4)**2 == 10**2 == 
 
 def print_key_val(**kwargs):
     """
-    Функция выводит переданные параметры в фиде key --> value
+    Функция выводит переданные параметры в виде key --> value
     key - имя параметра
     value - значение параметра
     :param kwargs: любое количество именованных параметров
@@ -167,7 +172,6 @@ def print_key_val(**kwargs):
     """
     for i in kwargs.items():
         print(i[0], '-->', i[1])
-
 
 
 """

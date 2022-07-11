@@ -41,7 +41,7 @@ while True:
     print('3. история покупок')
     print('4. выход')
 
-    choice = input('Выберите пункт меню')
+    choice = input('Выберите пункт меню: ')
     if choice == '1':
         while True:
             count = input('Введите сумму на которую хотите пополнить счет: ')
